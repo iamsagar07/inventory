@@ -1,0 +1,38 @@
+{% extends "invApp/layout.html" %} {% block content %}
+
+<div
+  class="lg:mt-8 md:mt-6 sm:mt-4 overflow-auto   min-h-screen w-full bg-gray-950 flex flex-col lg:justify-center py-12 sm:px-6 lg:px-8 p-3"
+>
+  <div class="sm:mx-auto sm:w-full sm:max-w-md mt-8 md:mt-3">
+    <img
+      class="mx-auto h-10 w-auto"
+      src="https://www.svgrepo.com/show/301692/login.svg"
+      alt="Workflow"
+    />
+    <h2
+      class="mb-8 mt-5 text-center text-3xl leading-9 font-extrabold text-gray-400"
+    >
+      Add Your Products
+    </h2>
+  </div>
+
+  <div class="">
+    <div class="bg-gray-400 py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <form
+        class="flex flex-col gap-3"
+        method="POST"
+      >
+        {% csrf_token %} {{form}}
+
+        <button
+          class="inline-flex justify-center items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
+          type="submit"
+        >
+          Add Product
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
